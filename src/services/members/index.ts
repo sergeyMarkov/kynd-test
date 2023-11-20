@@ -1,9 +1,10 @@
 import { Member } from './types'
+import { formatDistanceToNow } from 'date-fns';
 
 const loadMembers = () => {
   return new Promise<Member[]>((resolve, reject) => {
     setTimeout(() => {
-      resolve([
+      const members: Member[] = [
         {
           id: '02ba442240e4090293a1e634de2aeede',
           firstName: 'Terry',
@@ -44,7 +45,14 @@ const loadMembers = () => {
           lastMessage: `I watch the clock tick tock. Been saving all the green that I got. I can't wait to kick off my work shoes`,
           age: 19
         }
-      ])
+      ];
+
+      members.forEach((member) => {
+        const joinedDate = new Date(member.joinedAt);
+        member.memberSince = `Member for ${formatDistanceToNow(joinedDate)}`;
+      });
+      
+      resolve(members);
     }, 2000)
   })
 }

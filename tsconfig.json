@@ -1,4 +1,10 @@
 {
+  "vueCompilerOptions": {
+    "target": 2,
+      "extensions": [
+        ".vue"
+      ]
+  },
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -13,6 +19,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "allowJs": true,
     "types": [
       "webpack-env"
     ],
@@ -34,7 +41,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/App.spec.js", "src/views/--MemberView-spec.jsjs", "src/views/---MemberView--spec2.js", "src/services/members/index.spec.js", "src/utils/colours.spec.js"  ],
   "exclude": [
     "node_modules"
   ]
